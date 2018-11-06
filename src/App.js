@@ -1,28 +1,16 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import MomentUtils from 'material-ui-pickers/utils/moment-utils';
+import DateFnsUtils from 'material-ui-pickers/utils/date-fns-utils';
+import LuxonUtils from 'material-ui-pickers/utils/luxon-utils';
+import { MuiPickersUtilsProvider } from 'material-ui-pickers'
+import BasicUsage from './BasicUsage'
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+function App() {
+  return (
+    <MuiPickersUtilsProvider utils={MomentUtils}>
+      <BasicUsage />
+    </MuiPickersUtilsProvider>
+  )
 }
 
-export default App;
+export default App
